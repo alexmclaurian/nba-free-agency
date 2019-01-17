@@ -1,13 +1,13 @@
-const http = require('http');
+// Main entry into app
+
+const express = require('express');
+// const mongoose = require('mongoose');
+// const keys = require('./config/keys');
 
 const PORT = process.env.PORT || 3000;
 
-const server = http.createServer((req, res) => {
-  res.status = 200;
-  res.setHeader('Content-type', 'text/plain');
-  res.end('Hello World\n');
-});
+const app = express();
 
-server.listen(PORT, () => {
-  console.log(`Server running at port ${PORT}`);
-});
+require('./routes/routes')(app);
+
+app.listen(PORT);
