@@ -1,2 +1,2 @@
 # nba-free-agency
-Detailed Look at NBA Free Agency
+Detailed Look at NBA Stats
