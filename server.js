@@ -3,11 +3,16 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const path = require('path');
 const keys = require('./config/keys');
+
 // const team = require('./models/team.model');
 const PORT = process.env.PORT || 5000;
 
 const app = express();
+
+app.use(express.static(path.join(__dirname, 'client/build')));
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
